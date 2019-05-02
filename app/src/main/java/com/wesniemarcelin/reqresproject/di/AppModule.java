@@ -1,6 +1,7 @@
 package com.wesniemarcelin.reqresproject.di;
 
 import com.wesniemarcelin.reqresproject.service.ReqService;
+import com.wesniemarcelin.reqresproject.viewmodel.ReqResViewModelFactory;
 
 import javax.inject.Singleton;
 
@@ -25,12 +26,19 @@ public class AppModule {
 
     @Singleton
     @Provides
+    ReqResViewModelFactory provideViewModelFactory(ReqService reqService) {
+        return new ReqResViewModelFactory(reqService);
+    }
+
+    @Singleton
+    @Provides
     RxJava2CallAdapterFactory provideCallAdapterFactory() {
         return RxJava2CallAdapterFactory.createWithScheduler(Schedulers.io());
     }
+
     @Singleton
     @Provides
-    ReqService provideReqResService(Retrofit retrofit){
+    ReqService provideReqResService(Retrofit retrofit) {
         return retrofit.create(ReqService.class);
     }
 }

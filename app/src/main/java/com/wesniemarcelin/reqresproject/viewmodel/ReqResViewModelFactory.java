@@ -6,6 +6,9 @@ import android.support.annotation.NonNull;
 
 import com.wesniemarcelin.reqresproject.service.ReqService;
 
+import javax.inject.Singleton;
+
+@Singleton
 public class ReqResViewModelFactory implements ViewModelProvider.Factory {
     private ReqService reqService;
 
