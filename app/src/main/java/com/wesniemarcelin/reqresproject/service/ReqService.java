@@ -5,6 +5,7 @@ import com.wesniemarcelin.reqresproject.model.UserList;
 
 import io.reactivex.Observable;
 import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 
@@ -15,5 +16,6 @@ public interface ReqService {
     Observable<UserList> getUsers();
 
     @POST("users")
+    @FormUrlEncoded
     Observable<NewUser> createUser(@Field("name") String name, @Field("job") String job);
 }

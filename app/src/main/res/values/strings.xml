@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ReqResProject</string>
+    <string name="add_new_user_text">Add New User</string>
+    <string name="add_text">Add</string>
+    <string name="user_list_text">User List</string>
+    <string name="new_user_added_toast_txt">New User Added:</string>
 </resources>

@@ -7,6 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.MainActivity">
+
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -20,19 +21,18 @@
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
             <EditText
-                android:id="@+id/toolbar_org_edit_text"
-                android:layout_width="wrap_content"
+                android:id="@+id/new_user_edit_text"
+                android:layout_width="@dimen/dimen_80dp"
                 android:layout_height="match_parent"
                 android:layout_marginStart="@dimen/dimen_30dp"
-                android:hint="Add"
-                 />
+                android:hint="@string/add_text" />
 
             <Button
-                android:id="@+id/toolbar_org_submit_btn"
+                android:id="@+id/new_user_submit_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginEnd="@dimen/dimen_30dp"
-                android:text="Add New User" />
+                android:text="@string/add_new_user_text" />
         </android.support.v7.widget.Toolbar>
 
         <TextView
@@ -43,7 +43,9 @@
             android:layout_marginTop="@dimen/dimen_15dp"
             android:layout_marginEnd="@dimen/dimen_20dp"
             android:gravity="center"
-            android:text="User List"
+            android:text="@string/user_list_text"
+            android:textSize="40sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@id/user_list_rv"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -55,7 +57,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/dimen_10dp"
-            android:layout_marginTop="@dimen/dimen_20dp"
+            android:layout_marginTop="@dimen/dimen_30dp"
             android:layout_marginEnd="@dimen/dimen_10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"

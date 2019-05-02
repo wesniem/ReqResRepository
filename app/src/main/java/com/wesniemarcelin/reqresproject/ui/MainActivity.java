@@ -5,7 +5,7 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
-import android.view.View;
+import android.widget.Toast;
 
 import com.wesniemarcelin.reqresproject.R;
 import com.wesniemarcelin.reqresproject.ReqResApplication;
@@ -35,11 +35,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void intializeViews() {
-        binding.toolbarOrgSubmitBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
+        binding.newUserSubmitBtn.setOnClickListener(view -> {
+            viewModel.createNewUser(binding.newUserEditText.getText().toString());
+            viewModel.newUserCreated.observe(this, newUser -> {
+                if (newUser != null) {
+                    Toast.makeText(MainActivity.this, getString(R.string.new_user_added_toast_txt) + " " + newUser.getName(), Toast.LENGTH_SHORT).show();
+                }
+            });
         });
     }
 
