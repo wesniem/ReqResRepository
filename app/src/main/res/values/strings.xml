@@ -4,4 +4,6 @@
     <string name="add_text">Add</string>
     <string name="user_list_text">User List</string>
     <string name="new_user_added_toast_txt">New User Added:</string>
+    <string name="new_user_job">Student</string>
+    <string name="new_user_txt">New User: </string>
 </resources>

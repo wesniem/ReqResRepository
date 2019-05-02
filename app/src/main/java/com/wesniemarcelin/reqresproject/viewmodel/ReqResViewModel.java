@@ -4,6 +4,7 @@ import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
 import android.util.Log;
 
+import com.wesniemarcelin.reqresproject.R;
 import com.wesniemarcelin.reqresproject.model.NewUser;
 import com.wesniemarcelin.reqresproject.model.User;
 import com.wesniemarcelin.reqresproject.model.UserList;
@@ -56,7 +57,7 @@ public class ReqResViewModel extends ViewModel {
     }
 
     public void createNewUser(String name) {
-        Disposable newUserDisposable = reqService.createUser(name, "student")
+        Disposable newUserDisposable = reqService.createUser(name, String.valueOf(R.string.new_user_job))
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeWith(new DisposableObserver<NewUser>() {
